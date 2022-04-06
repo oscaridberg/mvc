@@ -1,0 +1,44 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $text-bg;
+    padding: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+
+    h1 {
+        font-size: 2rem;
+        margin: 0 auto;
+        font-family: $title-font;
+        font-size: 3rem;
+
+    }
+
+    h2 {
+        font-family: $title-font;
+        font-size: 2rem;
+    }
+    figure {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+
+        img {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        figcaption {
+            margin: 0 auto;
+            margin-top: 1rem;
+            font-family: $text-font;
+            font-style: italic;
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+        font-family: $text-font;
+    }
+}

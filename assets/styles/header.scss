@@ -1,0 +1,39 @@
+header {
+    background-color: $dark-highlight;
+    margin: 0;
+    padding: 0;
+    h1 {
+        margin-top: 0;
+        font-family: $header-font;
+        font-size: 3rem;
+        margin-bottom: 0;
+        padding: 1rem;
+        padding-bottom: 0;
+        color: $alternative-font-color;
+    }
+}
+
+nav {
+    margin: 0;
+    ul {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        justify-content: center;
+
+        a {
+            list-style: none;
+            width: 33%;
+            text-align: center;
+            background-color: $dark-highlight;
+            padding: 1rem;
+            color: $alternative-font-color;
+            text-decoration: none;
+            font-family: $title-font;
+        }
+
+        a:hover {
+            background-color: $light-bg;
+        }
+    }
+}
