@@ -1,5 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap");
+header {
+  background-color: #171545;
+  margin: 0;
+  padding: 0;
+}
+header h1 {
+  margin-top: 0;
+  font-family: "Bebas Neue", cursive;
+  font-size: 3rem;
+  margin-bottom: 0;
+  padding: 1rem;
+  padding-bottom: 0;
+  color: #fff;
+}
+
+nav {
+  margin: 0;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  justify-content: center;
+}
+nav ul a {
+  list-style: none;
+  width: 33%;
+  text-align: center;
+  background-color: #171545;
+  padding: 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-family: "IBM Plex Mono", monospace;
+}
+nav ul a:hover {
+  background-color: #F04646;
+}
+
+footer {
+  margin-top: 1rem;
+  background-color: #171545;
+  color: #fff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  text-align: center;
+  min-height: 300px;
+}
+footer a {
+  display: inline-block;
+  font-size: 3rem;
+  font-style: normal;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  padding: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+main h1 {
+  font-size: 2rem;
+  margin: 0 auto;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 3rem;
+}
+main h2 {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 2rem;
+}
+main figure {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+main figure img {
+  max-width: 500px;
+  margin: 0 auto;
+}
+main figure figcaption {
+  margin: 0 auto;
+  margin-top: 1rem;
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+}
+main p {
+  margin-bottom: 0;
+  font-family: "EB Garamond", serif;
+}
+
 body {
-  background-color: blue;
+  background-color: #fff;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.css.map */
