@@ -1,0 +1,79 @@
+.heart, .diamond {
+    color: $card-red;
+}
+
+.spade, .clover {
+    color: $card-black;
+}
+
+.deck-field {
+    display: flex;
+    max-width: 900px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    flex: 2 0 7%;
+    border: 2px solid black;
+    min-height: 100px;
+    height: 100px;
+    max-width: 65px;
+    display: flex;
+    justify-content: center;
+}
+
+.player {
+    min-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+    p {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.game-control {
+    display: flex;
+    align-items: center;
+
+    ul {
+        width: 50%;
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+            background-color: $light-bg;
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            padding: 0.5rem;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        li:hover {
+            background-color: $dark-highlight;
+            color: $alternative-font-color;
+        }
+    }
+
+    form {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: $light-bg;
+        padding: 0.5rem;
+
+        input {
+            margin: auto;
+            width: 25%;
+            margin-bottom: 10px;
+        }
+    }
+}
