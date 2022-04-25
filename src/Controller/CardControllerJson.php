@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CardControllerJson extends AbstractController
 {
     /**
-     * @Route("/api/card")
+     * @Route("/api/card"), name="cardjson"
      */
 
     public function card(): Response
@@ -29,7 +29,7 @@ class CardControllerJson extends AbstractController
     }
 
     /**
-     * @Route("/api/card/deck")
+     * @Route("/api/card/deck"), name="deckjson"
      * method={"GET"}
      */
 

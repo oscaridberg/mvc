@@ -1,5 +1,4 @@
 {% extends "base.html.twig" %}
-
 {% block title %}Home{% endblock %}
 
 {% block body %}
@@ -7,25 +6,7 @@
 
 <main>
     <h1>Card</h1>
-    <div class="game-control">
-
-        <ul>
-            <a href="card/deck"><li>Deck</li></a>
-            <a href="card/deck/shuffle"><li>Shuffle</li></a>
-            <a href="card/deck/draw"><li>Draw</li></a>
-            <a href="card/deck2"><li>Deck 2</li></a>
-
-        </ul>
-
-        <form class="deal" action="./card/deck/deal/" method="post">
-            <label for="nPlayers">No. Players</label>
-            <input type="number" name="nPlayers" min="0" max="52">
-            <label for="nCards">No. Cards</label>
-            <input type="number" name="nCards" min="0" max="52">
-            <input type="submit" name="Submit" value="Deal Cards">
-        </form>
-
-    </div>
+    {% include './card/card_nav.twig' %}
 
 </main>
 

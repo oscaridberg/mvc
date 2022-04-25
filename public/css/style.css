@@ -94,6 +94,79 @@ main p {
   font-family: "EB Garamond", serif;
 }
 
+.heart, .diamond {
+  color: red;
+}
+
+.spade, .clover {
+  color: black;
+}
+
+.deck-field {
+  display: flex;
+  max-width: 900px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  flex: 2 0 7%;
+  border: 2px solid black;
+  min-height: 100px;
+  height: 100px;
+  max-width: 65px;
+  display: flex;
+  justify-content: center;
+}
+
+.player {
+  min-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.player p {
+  width: 100%;
+  text-align: center;
+}
+
+.game-control {
+  display: flex;
+  align-items: center;
+}
+.game-control ul {
+  width: 50%;
+}
+.game-control ul a {
+  text-decoration: none;
+}
+.game-control ul li {
+  list-style: none;
+  background-color: #F04646;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 10px;
+  color: black;
+}
+.game-control ul li:hover {
+  background-color: #171545;
+  color: #fff;
+}
+.game-control form {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #F04646;
+  padding: 0.5rem;
+}
+.game-control form input {
+  margin: auto;
+  width: 25%;
+  margin-bottom: 10px;
+}
+
 body {
   background-color: #fff;
   margin: 0 auto;
