@@ -15,6 +15,10 @@ header h1 {
   color: #fff;
 }
 
+p {
+    margin-bottom: 1rem;
+}
+
 nav {
   margin: 0;
 }
@@ -69,10 +73,13 @@ main h1 {
   margin: 0 auto;
   font-family: "IBM Plex Mono", monospace;
   font-size: 3rem;
+  margin-bottom: 2rem;
 }
 main h2 {
   font-family: "IBM Plex Mono", monospace;
   font-size: 2rem;
+  margin: auto;
+  margin-bottom: 1rem;
 }
 main figure {
   display: flex;
@@ -150,6 +157,24 @@ main p {
   margin-bottom: 10px;
   color: black;
 }
+
+.game-button {
+  list-style: none;
+  background-color: #F04646;
+  width: 25%;
+  margin: auto;
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  color: black;
+  text-decoration: none;
+
+}
+
+.game-button:hover {
+    text-decoration: underline;
+}
+
 .game-control ul li:hover {
   background-color: #171545;
   color: #fff;

@@ -115,7 +115,7 @@ class CardController extends AbstractController
     }
 
     /**
-     * @Route("/card/deck/deal/{players}/{cards}", name="game")
+     * @Route("/card/deck/deal/{players}/{cards}", name="deckGame")
      * method={"GET"}
      */
     public function startGame(int $players, int $cards, SessionInterface $session): Response
