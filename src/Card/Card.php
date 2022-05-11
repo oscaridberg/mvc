@@ -73,4 +73,14 @@ class Card
     {
         return $this->color;
     }
+
+    public function setValue(int $number): void
+    {
+        $this->value = $number;
+    }
+
+    public function isAce(): bool
+    {
+        return $this->getStringValue() === 'A';
+    }
 }

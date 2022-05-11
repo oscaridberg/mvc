@@ -86,7 +86,7 @@ class CardController extends AbstractController
      */
     public function draw(SessionInterface $session): Response
     {
-        $deck = $session->get("deck") ?? new \App\Card\Deck(1, 13);
+        $deck = $session->get("deck");
 
         $data = [
             'title' => 'Draw',

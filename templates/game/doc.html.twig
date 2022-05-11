@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+{% block title %}Doc{% endblock %}
+{% block body %}
+
+<main>
+    <h1>{{ title }}</h1>
+
+    <h2>Twenty-One Document</h2>
+
+<article>
+<h3>Class diagram</h3>
+    <figure>
+        <img src="./../img/twentyone_classes.jpg" alt="Class diagram">
+        <figcaption>Classes for the game twenty-one.</figcaption>
+    </figure>
+
+    <h4>Game Class</h4>
+    <p>A general class for managing a card game.</p>
+
+    <h4>Twentyone Class</h4>
+    <p>Inherits from Game class and contains specific rules for the game twenty-one.</p>
+
+    <h4>Player class</h4>
+    <p>Class for managing the player.</p>
+
+    <h4>Hand Class</h4>
+    <p>Holds the cards.</p>
+
+    <h4>Deck Class</h4>
+    <p>Class responsible for creating a card deck.</p>
+
+    <h4>Card Class</h4>
+    <p>Represents a card.</p>
+
+</article>
+
+<article>
+
+</article>
+<h3>Sequence diagram</h3>
+    <figure>
+        <img src="./../img/twentyone_flowchart.jpg" alt="Sequence diargram">
+        <figcaption>Sequence diagram for the game twenty-one.</figcaption>
+    </figure>
+
+    <h4>Psuedo code for describing sequence digram</h4>
+
+    <ul>
+        <li>Start game</li>
+        <li>Add player and dealer (dealer is a computer controlled player) to game</li>
+        <li>Each player draws a card</li>
+        <li>Player can choose to draw another card or stay</li>
+        <li>If player chooses to stay</li>
+        <li>Dealer can choose to draw or stay</li>
+        <li>If dealer also chooses to stay, end round</li>
+        <li>Calculate points for each player</li>
+        <li>Determine winner</li>
+
+    </ul>
+</article>
+
+</main>
+
+{% endblock %}

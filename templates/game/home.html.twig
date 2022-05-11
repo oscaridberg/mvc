@@ -12,14 +12,16 @@
 
     <p>Both the player and the dealer will try to get as close as possible to a score of 21 with two or more cards, if you go over 21 points you automatically loose.</p>
 
-    <p>The dealer will first place a bet and deal one card to the player, the player can then view their first card and place their own bet. The players bet cannot be higher than the dealers. After the bet is placed the player receives a second card, they may choose to get another card to get closer to 21 or stay with their current cards. Once the player chooses to stay the dealer will deal themselves cards until they are satisfied.</p>
+    <p>The dealer will first deal one card to the player, the player can then view their first card. The player may choose to get another card to get closer to 21 or stay with their current card. Once the player chooses to stay the dealer will deal themselves cards until they are satisfied.</p>
 
     <p>When both parties are happy with their cards the player and dealer will turn their cards over, the one that is closest to 21 wins, if it is a tie the dealer wins.</p>
 
     <p>Aces are 1 or 14, Jacks 11, Queens, 12, Kings 13, and numbered cards are worth their face value.</p>
 
     <a class="game-button" href="{{ absolute_url(path('twentyone')) }}">Start game</a>
+
 </main>
+<a href="{{ absolute_url(path('doc')) }}">Documentation</a>
 
 
 {% endblock %}

@@ -22,6 +22,12 @@ class Player
         $this->cardHand->addCards($number, $deck);
     }
 
+
+    public function getHandObject(): object
+    {
+        return $this->cardHand;
+    }
+
     public function getHand(): array
     {
         $cards = [];
@@ -36,4 +42,5 @@ class Player
     {
         return $this->playerId;
     }
+
 }

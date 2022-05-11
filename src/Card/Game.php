@@ -10,6 +10,9 @@ class Game
     protected int $numberOfCards;
     protected int $numberOfPlayers;
     protected object $deck;
+    protected bool $isFinished;
+    protected int $maxScore;
+
 
     public function __construct(int $players, int $cards, object $deck)
     {
@@ -20,12 +23,18 @@ class Game
         $this->giveCards();
     }
 
+
     public function addPlayer(int $number): void
     {
         for ($i = 0; $i < $this->numberOfPlayers; $i++) {
             $player = new Player($number, $i);
             array_push($this->players, $player);
         }
+    }
+
+    public function getPlayer(int $player): object
+    {
+        return $this->players[$player];
     }
 
     public function getPlayers(): array

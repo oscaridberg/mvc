@@ -18,7 +18,11 @@ main {
     h2 {
         font-family: $title-font;
         font-size: 2rem;
+        margin: auto;
     }
+
+
+
     figure {
         display: flex;
         flex-direction: column;
@@ -40,5 +44,17 @@ main {
     p {
         margin-bottom: 0;
         font-family: $text-font;
+    }
+}
+
+article {
+    margin-bottom: 2rem;
+
+    h4 {
+        margin-bottom: 5px;
+    }
+
+    p {
+        margin-bottom: 3rem;
     }
 }

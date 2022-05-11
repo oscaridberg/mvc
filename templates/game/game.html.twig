@@ -3,14 +3,59 @@
 {% block body %}
 
 
+
 <main>
     <h1>{{ title }}</h1>
 
-    <h2>Game</h2>
+    {% if winner is defined %}
+        <h2>{{winner}} won!</h2>
+    {% endif %}
+    <p>Cards left in deck: {{ length }}</p>
+    <div class="deck-field">
+            <div class='player21'>
+            <p>Dealer</p>
+                {% if dealer is defined %}
+                    <p>Dealer score: {{dealer}}</p>
+                {% else %}
+                    <p>Dealer score: </p>
+                {% endif %}
 
+                {% for card in players[0].getHand() %}
+                    <div class="card {{card.getColor()}}"><p> {{ card.getCardGraphic() }} {{card.getStringValue()}} </p></div>
+                {% endfor %}
 
+            </div>
+
+            <div class='player21'>
+            <p>Player</p>
+                {% if score is defined %}
+                    <p>Your score: {{score}}</p>
+                {% else %}
+                    <p>Your score: </p>
+                {% endif %}
+
+                {% for card in players[1].getHand() %}
+                    <div class="card {{card.getColor()}}"><p> {{ card.getCardGraphic() }} {{card.getStringValue()}} </p></div>
+                {% endfor %}
+
+            </div>
+
+    </div>
+    <div class="button-container">
+        {% if title == 'End of round'%}
+            <a class="game-button" href="{{ absolute_url(path('next')) }}">Next round</a>
+        {% else %}
+            <a class="game-button" href="{{ absolute_url(path('draw21')) }}">Draw Card</a>
+        {% endif %}
+
+        <a class="game-button" href="{{ absolute_url(path('stay')) }}">Stay</a>
+        <a class="game-button red" href="{{ absolute_url(path('quit')) }}">Quit</a>
+    </div>
 
 </main>
+
+
+
 
 
 {% endblock %}
