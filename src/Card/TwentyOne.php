@@ -32,4 +32,30 @@ class TwentyOne extends Game
         return $this->players[$player]->getHandObject()->sumCards();
     }
 
+    public function dealer(int $player, object $deck) {
+        $maxScore = 21;
+        $dealer = $this->players[$player];
+        $dealerHand = $dealer->getHandObject();
+
+        while ($dealerHand->sumCards() <= 17) {
+            $dealerHand->addCards(1, $deck);
+        }
+
+        return $dealerHand->sumCards();
+    }
+
+    public function decideWinner(): string {
+        $dealer = $this->getPlayerScore(0);
+        $player = $this->getPlayerScore(1);
+        $winner = '';
+        $maxScore = 21;
+
+        if ($player > $maxScore or $player === $dealer or $dealer > $player and $dealer <= $maxScore) {
+            $winner = 'Dealer won.';
+        } elseif ($dealer > $maxScore and $player <= $maxScore or $player > $dealer) {
+            $winner = 'You won!';
+        }
+
+        return $winner;
+    }
 }
