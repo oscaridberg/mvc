@@ -35,6 +35,7 @@
     max-width: 65px;
     display: flex;
     justify-content: center;
+    background-color: white;
 }
 
 .player {
@@ -56,6 +57,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: seagreen;
+    padding: 1rem;
+    min-height: 180px;
 
 
     p {
@@ -121,10 +125,22 @@
 
 }
 
-.red {
+.quit {
     background-color: red;
 }
 
+.stay {
+    background-color: cornflowerblue;
+}
+
+.deal {
+    background-color: orange;
+}
 .game-button:hover {
     text-decoration: underline;
+}
+
+.cardCounter {
+    background-color: tomato;
+    padding: 1rem;
 }

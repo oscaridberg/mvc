@@ -7,10 +7,7 @@
 <main>
     <h1>{{ title }}</h1>
 
-    {% if winner is defined %}
-        <h2>{{winner}} won!</h2>
-    {% endif %}
-    <p>Cards left in deck: {{ length }}</p>
+    <p class="cardCounter">Cards left in deck: {{ length }}</p>
     <div class="deck-field">
             <div class='player21'>
             <p>Dealer</p>
@@ -42,14 +39,19 @@
 
     </div>
     <div class="button-container">
-        {% if title == 'End of round'%}
-            <a class="game-button" href="{{ absolute_url(path('next')) }}">Next round</a>
+        {% if winner is defined %}
+            <a class="game-button deal" href="{{ absolute_url(path('next')) }}">Next round</a>
         {% else %}
-            <a class="game-button" href="{{ absolute_url(path('draw21')) }}">Draw Card</a>
+            <a class="game-button deal" href="{{ absolute_url(path('draw21')) }}">Draw Card</a>
         {% endif %}
 
-        <a class="game-button" href="{{ absolute_url(path('stay')) }}">Stay</a>
-        <a class="game-button red" href="{{ absolute_url(path('quit')) }}">Quit</a>
+        {% if score is defined %}
+            <a class="game-button stay" href="{{ absolute_url(path('stay')) }}">Stay</a>
+        {% else %}
+            <a class="game-button stay" href="#">Stay</a>
+        {% endif %}
+
+        <a class="game-button quit" href="{{ absolute_url(path('quit')) }}">Quit</a>
     </div>
 
 </main>

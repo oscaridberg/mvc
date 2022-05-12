@@ -15,8 +15,9 @@ class GameController extends AbstractController
      * @Route("/game", name="game")
      */
 
-    public function home(): Response
+    public function home(SessionInterface $session): Response
     {
+        $deck = $session->set("deck21", new \App\Card\Deck(1, 13));
         $data = [
             'title' => 'Twenty-One'
         ];
@@ -28,7 +29,7 @@ class GameController extends AbstractController
      */
     public function startGame(SessionInterface $session): Response
     {
-        // $deck = $session->set("deck21", new \App\Card\Deck(1, 13));
+
         $deck = $session->get("deck21") ?? new \App\Card\Deck(1, 13);
         $deck->shuffleDeck();
 
@@ -50,9 +51,10 @@ class GameController extends AbstractController
      */
     public function draw(SessionInterface $session): Response
     {
+        $this->resetDeck($session);
         $deck = $session->get("deck21");
         $game = $session->get("game21");
-        $game->drawCard(1, $deck);
+        $game->drawCard($session, 1, $deck);
         $data = [
             'title' => 'Twenty-One',
             'players' => $game->getPlayers(),
@@ -73,13 +75,16 @@ class GameController extends AbstractController
 
     public function stay(SessionInterface $session): Response
     {
+        $this->resetDeck($session);
         $deck = $session->get("deck21");
         $game = $session->get("game21");
-        $game->dealer(0, $deck);
+        if ($game->getPlayerScore(1) <= 21) {
+            $game->dealer(0, $deck);
+        }
 
         $data = [
-            'title' => 'End of round',
-            'winner' => $game->decideWinner(),
+            'title' => $game->decideWinner(),
+            'winner' => true,
             'players' => $game->getPlayers(),
             'length' => $deck->deckLength(),
             'score' => $game->getPlayerScore(1),
@@ -124,5 +129,13 @@ class GameController extends AbstractController
     {
 
         return $this->redirectToRoute('twentyone');
+    }
+
+    public function resetDeck(SessionInterface $session)
+    {
+        $deck = $session->get("deck21");
+        if ($deck->deckLength() <= 0) {
+            $session->set("deck21", new \App\Card\Deck(1, 13));
+        }
     }
 }
