@@ -34,7 +34,7 @@ class Hand
             }
         }
 
-        for ($i=0; $i < count($aces) ; $i++) {
+        for ($i = 0; $i < count($aces); $i++) {
             if (array_sum($cardValues) + array_sum($aces) < 21) {
                 $aces[$i] = 14;
                 if (array_sum($cardValues) + array_sum($aces) > 21) {

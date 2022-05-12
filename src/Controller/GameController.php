@@ -29,7 +29,6 @@ class GameController extends AbstractController
      */
     public function startGame(SessionInterface $session): Response
     {
-
         $deck = $session->get("deck21") ?? new \App\Card\Deck(1, 13);
         $deck->shuffleDeck();
 
@@ -127,7 +126,6 @@ class GameController extends AbstractController
 
     public function next(SessionInterface $session): Response
     {
-
         return $this->redirectToRoute('twentyone');
     }
 

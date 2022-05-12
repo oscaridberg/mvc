@@ -42,5 +42,4 @@ class Player
     {
         return $this->playerId;
     }
-
 }

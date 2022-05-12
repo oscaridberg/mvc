@@ -15,10 +15,6 @@ header h1 {
   color: #fff;
 }
 
-p {
-    margin-bottom: 1rem;
-}
-
 nav {
   margin: 0;
 }
@@ -50,7 +46,7 @@ footer {
   padding-bottom: 2rem;
   width: 100%;
   text-align: center;
-  min-height: 300px;
+  min-height: 600px;
 }
 footer a {
   display: inline-block;
@@ -73,13 +69,11 @@ main h1 {
   margin: 0 auto;
   font-family: "IBM Plex Mono", monospace;
   font-size: 3rem;
-  margin-bottom: 2rem;
 }
 main h2 {
   font-family: "IBM Plex Mono", monospace;
   font-size: 2rem;
   margin: auto;
-  margin-bottom: 1rem;
 }
 main figure {
   display: flex;
@@ -101,6 +95,16 @@ main p {
   font-family: "EB Garamond", serif;
 }
 
+article {
+  margin-bottom: 2rem;
+}
+article h4 {
+  margin-bottom: 5px;
+}
+article p {
+  margin-bottom: 3rem;
+}
+
 .heart, .diamond {
   color: red;
 }
@@ -114,6 +118,19 @@ main p {
   max-width: 900px;
   flex-wrap: wrap;
   justify-content: center;
+  min-height: 300px;
+}
+
+.button-container {
+  margin: 0 auto;
+  display: flex;
+  max-width: 400px;
+  min-width: 250px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.button-container .game-button {
+  width: 100%;
 }
 
 .card {
@@ -124,6 +141,7 @@ main p {
   max-width: 65px;
   display: flex;
   justify-content: center;
+  background-color: white;
 }
 
 .player {
@@ -135,6 +153,21 @@ main p {
 .player p {
   width: 100%;
   text-align: center;
+}
+
+.player21 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: seagreen;
+  padding: 1rem;
+  min-height: 180px;
+}
+.player21 p {
+  width: 100%;
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
 }
 
 .game-control {
@@ -157,24 +190,6 @@ main p {
   margin-bottom: 10px;
   color: black;
 }
-
-.game-button {
-  list-style: none;
-  background-color: #F04646;
-  width: 25%;
-  margin: auto;
-  text-align: center;
-  padding: 0.5rem;
-  margin-top: 1rem;
-  color: black;
-  text-decoration: none;
-
-}
-
-.game-button:hover {
-    text-decoration: underline;
-}
-
 .game-control ul li:hover {
   background-color: #171545;
   color: #fff;
@@ -190,6 +205,43 @@ main p {
   margin: auto;
   width: 25%;
   margin-bottom: 10px;
+}
+
+.game-button {
+  list-style: none;
+  background-color: #F04646;
+  width: 45%;
+  margin: auto;
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  color: black;
+  text-decoration: none;
+  border-radius: 50px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+}
+
+.quit {
+  background-color: red;
+}
+
+.stay {
+  background-color: cornflowerblue;
+}
+
+.deal {
+  background-color: orange;
+}
+
+.game-button:hover {
+  text-decoration: underline;
+}
+
+.cardCounter {
+  background-color: tomato;
+  padding: 1rem;
+  font-family: "IBM Plex Mono", monospace;
 }
 
 body {

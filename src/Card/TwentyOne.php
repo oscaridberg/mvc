@@ -5,7 +5,6 @@ namespace App\Card;
 use App\Card\Player;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-
 class TwentyOne extends Game
 {
     protected int $maxScore = 21;
@@ -25,14 +24,15 @@ class TwentyOne extends Game
         $playerHand = $this->players[$player]->getHandObject();
 
         return $playerHand->sumCards() < $this->maxScore;
-
     }
 
-    public function getPlayerScore(int $player): int {
+    public function getPlayerScore(int $player): int
+    {
         return $this->players[$player]->getHandObject()->sumCards();
     }
 
-    public function dealer(int $player, object $deck) {
+    public function dealer(int $player, object $deck)
+    {
         $maxScore = 21;
         $dealer = $this->players[$player];
         $dealerHand = $dealer->getHandObject();
@@ -44,7 +44,8 @@ class TwentyOne extends Game
         return $dealerHand->sumCards();
     }
 
-    public function decideWinner(): string {
+    public function decideWinner(): string
+    {
         $dealer = $this->getPlayerScore(0);
         $player = $this->getPlayerScore(1);
         $winner = '';
