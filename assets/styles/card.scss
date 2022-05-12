@@ -20,6 +20,7 @@
     margin: 0 auto;
     display: flex;
     max-width: 400px;
+    min-width: 250px;
     flex-wrap: wrap;
     justify-content: center;
 
@@ -65,6 +66,7 @@
     p {
         width: 100%;
         text-align: center;
+        font-family: $title-font;
     }
 }
 
@@ -114,7 +116,7 @@
 .game-button {
   list-style: none;
   background-color: #F04646;
-  width: 25%;
+  width: 45%;
   margin: auto;
   text-align: center;
   padding: 0.5rem;
@@ -122,6 +124,8 @@
   color: black;
   text-decoration: none;
   border-radius: 50px;
+  font-family: $title-font;
+  font-size: 0.75rem;
 
 }
 
@@ -143,4 +147,5 @@
 .cardCounter {
     background-color: tomato;
     padding: 1rem;
+    font-family: $title-font;
 }

@@ -134,7 +134,7 @@ class GameController extends AbstractController
     public function resetDeck(SessionInterface $session)
     {
         $deck = $session->get("deck21");
-        if ($deck->deckLength() <= 0) {
+        if ($deck->deckLength() <= 5) {
             $session->set("deck21", new \App\Card\Deck(1, 13));
         }
     }
