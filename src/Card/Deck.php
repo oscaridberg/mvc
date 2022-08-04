@@ -14,7 +14,7 @@ class Deck
 
     protected array $deck = [];
 
-    public function __construct(int $min, int $max)
+    public function __construct(int $min=1, int $max=52)
     {
         $this->min = $min;
         $this->max = $max;

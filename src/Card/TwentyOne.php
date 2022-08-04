@@ -31,7 +31,7 @@ class TwentyOne extends Game
         return $this->players[$player]->getHandObject()->sumCards();
     }
 
-    public function dealer(int $player, object $deck)
+    public function dealer(int $player, object $deck): int
     {
         $maxScore = 21;
         $dealer = $this->players[$player];
