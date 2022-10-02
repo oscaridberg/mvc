@@ -285,4 +285,17 @@ td, th{
   margin: auto;
 }
 
+.formAdd {
+  /* height: 15rem; */
+  /* background-color: red; */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.formAdd > input {
+  margin-bottom: 1rem;
+}
+
 /*# sourceMappingURL=style.css.map */

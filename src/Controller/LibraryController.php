@@ -24,19 +24,22 @@ class LibraryController extends AbstractController
      * @Route("/library/create", name="create_library")
      */
     public function createBook(
-        ManagerRegistry $doctrine,
-        $title,
-        $isbn,
-        $author,
-        $img
+        ManagerRegistry $doctrine
     ): Response {
+        // print_r($_POST);
+        $title = $_POST['ftitle'];
+        $isbn = $_POST['fisbn'];
+        $author = $_POST['fauthor'];
+        $img = $_POST['fimg'];
+
+        // print_r($author);
         $entityManager = $doctrine->getManager();
 
-        $book = new Book();
-        $book->setName($title);
+        $book = new Library();
+        $book->setTitle($title);
         $book->setIsbn($isbn);
         $book->setAuthor($author);
-        $book->setImg($img);
+        $book->setImage($img);
 
         // tell Doctrine you want to (eventually) save the Product
         // (no queries yet)

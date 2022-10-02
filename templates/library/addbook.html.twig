@@ -5,15 +5,20 @@
 <main>
     <h1> {{title}} </h1>
 
-    <form action="">
-    <label for="ftitle">Book title:</label><br>
-    <input type="text" id="ftitle" name="ftitle"><br>
-    <label for="fisbn">ISBN nr.:</label><br>
-    <input type="text" id="fisbn" name="fisbn"><br>
-    <label for="fauthor">Author:</label><br>
-    <input type="text" id="fauthor" name="fauthor"><br>
-    <label for="fimg">Image:</label><br>
-    <input type="text" id="fimg" name="fimg"><br>
+    <form class="formAdd" action="/library/create" method="post">
+        <label for="ftitle">Book title:</label><br>
+        <input type="text" id="ftitle" name="ftitle"><br>
+
+        <label for="fisbn">ISBN nr.:</label><br>
+        <input type="text" id="fisbn" name="fisbn"><br>
+
+        <label for="fauthor">Author:</label><br>
+        <input type="text" id="fauthor" name="fauthor"><br>
+
+        <label for="fimg">Image:</label><br>
+        <input type="text" id="fimg" name="fimg"><br>
+
+        <input type="submit" value="Submit">
     </form>
 </main>
 
