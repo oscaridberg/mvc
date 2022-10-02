@@ -47,6 +47,19 @@ class LibraryController extends AbstractController
         return new Response('Saved new book with title '.$book->getTitle());
     }
 
+    /**
+    * @Route("/library/add", name="library_add")
+    */
+    public function addBook(
+        LibraryRepository $libraryRepository
+    ): Response {
+
+        $data = [
+            "title" => "Add book"
+        ];
+        
+        return $this->render('library/addbook.html.twig', $data);
+    }
 
     /**
     * @Route("/library/show", name="library_show_all")
