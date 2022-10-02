@@ -269,4 +269,18 @@ td, th{
   text-align: right;
 }
 
+.bookTitle {
+  font-size: 2rem;
+}
+
+.authorTitle {
+  font-size: 1.5rem;
+}
+
+.bookCover {
+  max-height: 250px;
+  max-width: 150px;
+  margin: auto;
+}
+
 /*# sourceMappingURL=style.css.map */

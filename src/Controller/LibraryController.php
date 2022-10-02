@@ -68,16 +68,24 @@ class LibraryController extends AbstractController
     }
 
     /**
-     * @Route("/library/show/{title}", name="library_show_one")
+     * @Route("/library/show/{id}", name="library_show_one")
      */
-    public function showBookByTitle(
+    public function showBookByid(
         LibraryRepository $libraryRepository,
-        str $title
+        int $id
     ): Response {
         $book = $libraryRepository
-            ->find($title);
+            ->find($id);
 
-        return $this->json($book);
+        // print_r($book);
+        $data = [
+            'title' => $book->getTitle(),
+            'author' => $book->getAuthor(),
+            'isbn' => $book->getIsbn(),
+            'img' => $book->getImage(),
+
+        ];
+        return $this->render('library/onebook.html.twig', $data);
     }
 
     /**

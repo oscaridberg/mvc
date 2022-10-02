@@ -1,0 +1,14 @@
+{% extends "library.html.twig" %}
+{% block title %}Library{% endblock %}
+{% block body %}
+
+<main>
+    <h1 class="bookTitle"> {{title}} </h1>
+    <img class="bookCover" src="./../../img/{{img}}" alt="">
+    <h2 class="authorTitle"> Author: {{author}} </h2>
+    <h2 class="authorTitle">ISBN: {{isbn}} </h2>
+
+</main>
+
+
+{% endblock %}
