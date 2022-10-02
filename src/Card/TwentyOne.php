@@ -33,7 +33,6 @@ class TwentyOne extends Game
 
     public function dealer(int $player, object $deck): int
     {
-        $maxScore = 21;
         $dealer = $this->players[$player];
         $dealerHand = $dealer->getHandObject();
 

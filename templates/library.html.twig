@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Library{% endblock %}
+
+{% block body %}
+
+
+<main>
+    <h1>Library</h1>
+
+    <ul>
+        <a href="{{ absolute_url(path('library')) }}/show"><li>Show books</li></a>
+    </ul>
+</main>
+
+
+{% endblock %}
