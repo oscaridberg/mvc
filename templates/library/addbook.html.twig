@@ -4,19 +4,23 @@
 
 <main>
     <h1> {{title}} </h1>
+    
 
-    <form class="formAdd" action="/library/create" method="post">
+    <p class="message"> {{message}} </p>
+
+
+    <form class="formAdd" action=" {{dAction}} " method="post">
         <label for="ftitle">Book title:</label><br>
-        <input type="text" id="ftitle" name="ftitle"><br>
+        <input type="text" id="ftitle" name="ftitle" value="{{dTitle}}"><br>
 
         <label for="fisbn">ISBN nr.:</label><br>
-        <input type="text" id="fisbn" name="fisbn"><br>
+        <input type="text" id="fisbn" name="fisbn" value="{{dIsbn}}"><br>
 
         <label for="fauthor">Author:</label><br>
-        <input type="text" id="fauthor" name="fauthor"><br>
+        <input type="text" id="fauthor" name="fauthor" value="{{dAuthor}}"><br>
 
         <label for="fimg">Image:</label><br>
-        <input type="text" id="fimg" name="fimg"><br>
+        <input type="text" id="fimg" name="fimg" value="{{dImage}}"><br>
 
         <input type="submit" value="Submit">
     </form>

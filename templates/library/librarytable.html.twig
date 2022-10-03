@@ -10,13 +10,14 @@
             <th>Title</th>
             <th>Author</th>
             <th>ISBN</th>
-
+            <th>Action</th>
         </tr>
             {% for book in books %}
                 <tr>
                     <td> <a href="show/{{book.id}}">{{book.title}}</a> </td>
                     <td> {{book.author}} </td>
                     <td class="isbn"> {{book.isbn}} </td>
+                    <td class="lUpdate"><a href="change/{{book.id}}">update</a></td>
                 </tr>
             {% endfor %}
 

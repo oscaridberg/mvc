@@ -298,4 +298,9 @@ td, th{
   margin-bottom: 1rem;
 }
 
+.message {
+  color: green;
+  margin: auto;
+  margin-bottom: 1rem;
+}
 /*# sourceMappingURL=style.css.map */

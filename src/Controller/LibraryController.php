@@ -47,7 +47,18 @@ class LibraryController extends AbstractController
 
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
-        return new Response('Saved new book with title '.$book->getTitle());
+
+        $data = [
+            "title" => "Add book",
+            'message' => 'Saved new book with title: '.$book->getTitle(),
+            "dTitle" => '',
+            "dIsbn" => '',
+            "dAuthor" => '',
+            "dImage" => '',
+            "dAction" => "/library/create"
+        ];
+        // return new Response('Saved new book with title '.$book->getTitle());
+        return $this->render('library/addbook.html.twig', $data);
     }
 
     /**
@@ -58,7 +69,13 @@ class LibraryController extends AbstractController
     ): Response {
 
         $data = [
-            "title" => "Add book"
+            "title" => "Add book",
+            "message" => '',
+            "dTitle" => '',
+            "dIsbn" => '',
+            "dAuthor" => '',
+            "dImage" => '',
+            "dAction" => "/library/create"
         ];
         
         return $this->render('library/addbook.html.twig', $data);
@@ -126,28 +143,58 @@ class LibraryController extends AbstractController
         return $this->redirectToRoute('product_show_all');
     }
 
+    /**
+     * @Route("/library/change/{id}", name="library_update_one")
+     */
+    public function changeBook(
+        LibraryRepository $libraryRepository,
+        int $id
+    ): Response {
+        $book = $libraryRepository
+            ->find($id);
+
+        // print_r($book);
+        $data = [
+            "title" => "Update book",
+            "message" => '',
+            "dTitle" => $book->getTitle(),
+            "dIsbn" => $book->getIsbn(),
+            "dAuthor" => $book->getAuthor(),
+            "dImage" => $book->getImage(),
+            "id" => $book->getId(),
+            "dAction" => "/library/update/{$book->getId()}"
+        ];
+        return $this->render('library/addbook.html.twig', $data);
+    }
 
     /**
-     * @Route("/product/update/{id}/{value}", name="product_update")
+     * @Route("/library/update/{id}", name="book_update")
      */
-    public function updateProduct(
+    public function updateBook(
         ManagerRegistry $doctrine,
-        int $id,
-        int $value
+        int $id
     ): Response {
-        $entityManager = $doctrine->getManager();
-        $product = $entityManager->getRepository(Product::class)->find($id);
+        $title = $_POST['ftitle'];
+        $isbn = $_POST['fisbn'];
+        $author = $_POST['fauthor'];
+        $img = $_POST['fimg'];
 
-        if (!$product) {
+        $entityManager = $doctrine->getManager();
+        $book = $entityManager->getRepository(Library::class)->find($id);
+
+        if (!$book) {
             throw $this->createNotFoundException(
                 'No product found for id '.$id
             );
         }
+        $book->setTitle($title);
+        $book->setIsbn($isbn);
+        $book->setAuthor($author);
+        $book->setImage($img);
 
-        $product->setValue($value);
         $entityManager->flush();
 
-        return $this->redirectToRoute('product_show_all');
+        return $this->redirectToRoute('library_show_all');
     }
 
 }
