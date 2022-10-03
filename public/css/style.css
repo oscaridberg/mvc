@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap");
+@import '~font-awesome';
 header {
   background-color: #171545;
   margin: 0;
@@ -257,6 +258,10 @@ body {
   border: 2px solid black;
 }
 
+.lUpdate {
+  text-align: center;
+}
+
 tr {
   outline: 1px solid black;
   /* background-color: #F04646; */
@@ -264,7 +269,7 @@ tr {
 
 td, th{
   outline: 1px solid black;
-  padding: 5px;
+  padding: 1rem;
 }
 
 .isbn {
@@ -302,5 +307,44 @@ td, th{
   color: green;
   margin: auto;
   margin-bottom: 1rem;
+}
+
+.addBook {
+  margin-top: 1rem;
+  text-decoration: none;
+  background-color: cornflowerblue;
+  width: 5rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  color: black;
+  border-radius: 50px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+}
+
+.updateBook {
+  margin-top: 1rem;
+  text-decoration: none;
+  background-color: green;
+  /* width: 5rem; */
+  padding: 0.5rem;
+  margin-top: 1rem;
+  color: white;
+  border-radius: 50px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+}
+
+.deleteBook {
+  margin-top: 1rem;
+  text-decoration: none;
+  background-color: red;
+  /* width: 5rem; */
+  padding: 0.5rem;
+  margin-top: 1rem;
+  color: white;
+  border-radius: 50px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
 }
 /*# sourceMappingURL=style.css.map */

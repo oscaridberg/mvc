@@ -94,7 +94,7 @@ class LibraryController extends AbstractController
         $books = json_decode($jsonData, true);
         $data = [
             'books' => $books,
-            'title' => 'All books'
+            'title' => 'Books'
         ];
 
         return $this->render('library/librarytable.html.twig', $data);
@@ -122,25 +122,25 @@ class LibraryController extends AbstractController
     }
 
     /**
-     * @Route("/product/delete/{id}", name="product_delete_by_id")
+     * @Route("/library/delete/{id}", name="library_delete_by_id")
      */
-    public function deleteProductById(
+    public function deleteBookById(
         ManagerRegistry $doctrine,
         int $id
     ): Response {
         $entityManager = $doctrine->getManager();
-        $product = $entityManager->getRepository(Product::class)->find($id);
+        $book = $entityManager->getRepository(Library::class)->find($id);
 
-        if (!$product) {
+        if (!$book) {
             throw $this->createNotFoundException(
                 'No product found for id '.$id
             );
         }
 
-        $entityManager->remove($product);
+        $entityManager->remove($book);
         $entityManager->flush();
 
-        return $this->redirectToRoute('product_show_all');
+        return $this->redirectToRoute('library_show_all');
     }
 
     /**

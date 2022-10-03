@@ -17,11 +17,14 @@
                     <td> <a href="show/{{book.id}}">{{book.title}}</a> </td>
                     <td> {{book.author}} </td>
                     <td class="isbn"> {{book.isbn}} </td>
-                    <td class="lUpdate"><a href="change/{{book.id}}">update</a></td>
+                    <td class="lUpdate"><a class="updateBook" href="change/{{book.id}}">update</a> <a class="deleteBook" href="delete/{{book.id}}">delete</a></td>
                 </tr>
             {% endfor %}
 
         </table>
+
+        <a class="addBook" href="{{ absolute_url(path('library')) }}/add">+ Add book</a>
+
 </main>
 
 
