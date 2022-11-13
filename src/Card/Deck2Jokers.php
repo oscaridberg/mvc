@@ -8,7 +8,7 @@ class Deck2Jokers extends Deck
 {
     private int $noOfJokers;
 
-    public function __construct(int $min=1, int $max=52, int $noOfJokers=2)
+    public function __construct(int $min = 1, int $max = 52, int $noOfJokers = 2)
     {
         $this->noOfJokers = $noOfJokers;
         parent::__construct($min, $max);

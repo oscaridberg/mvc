@@ -7,7 +7,7 @@ class Card
     protected int $value;
     protected string $color;
 
-    public function __construct(int $value=1, string $color="heart")
+    public function __construct(int $value = 1, string $color = "heart")
     {
         $this->value = $value;
         $this->color = $color;

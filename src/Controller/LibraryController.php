@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Entity\Library;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Repository\LibraryRepository;
@@ -50,7 +49,7 @@ class LibraryController extends AbstractController
 
         $data = [
             "title" => "Add book",
-            'message' => 'Saved new book with title: '.$book->getTitle(),
+            'message' => 'Saved new book with title: ' . $book->getTitle(),
             "dTitle" => '',
             "dIsbn" => '',
             "dAuthor" => '',
@@ -67,7 +66,6 @@ class LibraryController extends AbstractController
     public function addBook(
         LibraryRepository $libraryRepository
     ): Response {
-
         $data = [
             "title" => "Add book",
             "message" => '',
@@ -77,7 +75,7 @@ class LibraryController extends AbstractController
             "dImage" => '',
             "dAction" => "/library/create"
         ];
-        
+
         return $this->render('library/addbook.html.twig', $data);
     }
 
@@ -133,7 +131,7 @@ class LibraryController extends AbstractController
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No product found for id '.$id
+                'No product found for id ' . $id
             );
         }
 
@@ -184,7 +182,7 @@ class LibraryController extends AbstractController
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No product found for id '.$id
+                'No product found for id ' . $id
             );
         }
         $book->setTitle($title);
@@ -196,5 +194,4 @@ class LibraryController extends AbstractController
 
         return $this->redirectToRoute('library_show_all');
     }
-
 }
