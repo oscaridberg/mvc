@@ -1,6 +1,6 @@
 {
-    "name": "some/name",
-    "description": "some description",
+    "name": "mvc/report",
+    "description": "Report site for mvc course",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
@@ -104,7 +104,15 @@
         "phpcbf": "tools/php-codesniffer/vendor/bin/phpcbf --standard=PSR12 src",
         "phpdoc": "tools/phpdoc/phpdoc",
         "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit",
-        "phpmetrics": "tools/phpmetrics/vendor/bin/phpmetrics --config=phpmetrics.json"
+        "phpmetrics": "tools/phpmetrics/vendor/bin/phpmetrics --config=phpmetrics.json",
+        "phpmd": "tools/phpmd/vendor/bin/phpmd src text phpmd.xml || true",
+        "phpstan": "tools/phpstan/vendor/bin/phpstan analyse -l 5 src || true",
+        "phpcpd": "tools/phpcpd/vendor/bin/phpcpd src || true",
+        "lint": [
+            "@phpcpd",
+            "@phpmd",
+            "@phpstan"
+        ]
     },
     "conflict": {
         "symfony/symfony": "*"
