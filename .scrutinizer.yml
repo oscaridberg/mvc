@@ -6,7 +6,7 @@ filter:
 
 build:
     environment:
-        node: v18.12.1
+        node: v14.21.1
     nodes:
         my-tests:
             environment:
