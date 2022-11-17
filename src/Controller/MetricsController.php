@@ -2,9 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Metrics;
 use Doctrine\Persistence\ManagerRegistry;
-use App\Repository\MetricsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
