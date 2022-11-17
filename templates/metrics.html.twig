@@ -7,5 +7,37 @@
 
     <h2>Introduktion</h2>
 
+    <h3>Coverage</h3>
+    <p>Code coverage kan enkelt beskrivas som <em>hur</em> många rader av ens kod som ens tester går igenom. Desto fler rader som testas desto mer säker kan man känna sig för att ens kod fungerar som tänkt, samtidigt kan man känna sig mer trygg med att inget går isönder när man gör ändringar i koden. Just nu i skrivande stund ligger mitt coverage på 35%, som kanske är lite väl lågt och är helt klart ett område som jag kan förbättra.</p>
+
+    <h3>Complexity</h3>
+    <p>Code complexity beskriver sig själv rätt väl, det är hur pass komplex ens kod är. Desto mer komplex koden är desto svårare kommer det förmodligen vara att underhålla den, och det kan även påverka kodens prestanda. Enligt PhpMetrics har flera av mina filer en komplexitet på 10, och majoriteten av dessa filer är de som hanterar kortspelet. En förklaring till denna höga komplexitet är att varje fil i kortspelet använder sig av flera moduler som i sin tur använder sig av ytterligare fler moduler och detta är något som påverkar <em>cyclomatic complexity</em>.</p>
+    
+    <h3>Cohesion</h3>
+    <p>Cohesion är en term som beskriver hur väl elementen inuti en modul hänger ihop tillsammans. En kodbas med hög cohesion betyder att varje modul har ett specifikt syfte vilket gör att varje modul är utbytbar utan att påverka den övriga koden, samtidigt som modulerna är enkla att återanvända. Hög cohesion är något som man vill eftersträva i sin kod, har man en låg cohesion blir kodbasen oftast svår underhålla, testa, och till och med svår att förstå sig på.</p>
+
+    <h3>Coupling</h3>
+    <p>Coupling syftar på hur pass sammankopplad samt beroende ens olika moduler är med varandra i kodbasen och hänger starkt ihop med cohesion. Ett system med hög cohesion har oftast låg coupling, och vice versa. Tillskillnad från cohesion så vill man eftersträva låg coupling då varje modul inte är lika beroende av varandra, och var modul interagerar med varandra genom ett fåtal metoder. De moduler som har högst coupling-värden för min kodbas är de olika controllers som hanterar sidorna.</p>
+
+    
+    
+    
+    <h2>PhpMetrics</h2>
+
+    <p>PhpMetrics rapport visar tydligt på att det finns ett stort utrymme för förbättringar i min kodbas, många av mina moduler verkar ha en hög komplexitet och kortspelet är nog den största boven gällande detta. Från PhpMetrics får jag inget värde för hur många rader av min kod som testas, men kikar man på rapporten från Scrutinizer ser man att det ligger endast på 35% vilket verkligen hade kunnat förbättras. Desto mer av koden som jag ser till att testa, desto mer självsäker blir man i att det kommer fungera som tänkt och kommer att fortsätta att fungera trots om man gör ändringar i koden.</p>
+
+    <p>Min kodbas höga värden när det kommer till komplexiteten kommer främst vad det verkar som från kortspelet och dess logik. Den aspekt som orsakar detta är förmodligen att en stor del av spelets logik använder sig av antingen if-satser eller switch-cases. För att förbättra denna aspekt är det nog en god idé att gå igenom de olika modulerna och se om man inte kan hitta en annan lösning än att använda sig av if/switch-satser som på så sätt hade kunnat minska kodens komplexitet. Kikar man även i Deck-modulen så hittar man även nästlade for-loop:ar, något som även det ökar komplexiteten. Vissa delar av koden kommer dock vara svår att hitta en annan lösning för. Samtidigt så får jag intrycket av att värdet för komplexitet är delvis baserat på hur stor procent av varje modul består av if-satser, vilket gör att min modul för Hand-klassen får ett komplexitets värde på 7 även om klassen endast har totalt tre loopar och två if-satser i sina metoder.</p>
+
+    <p>Vad jag kan se så får man inte ut ett värde på ens kods cohesion från PhpMetrics, men då cohesion samt coupling är tätt sammankopplade går det att anta att kodbasen har en hög cohesion då kodbasens coupling är relativt låg. Den höga cohesion samt låga coupling är nog mycket tackvare av att vi igenom kursens gång arbetat mycket med att varje modul ska endast innehålla en klass som hanterar en sak.
+    </p>
+
+    <p>Ett sista mätvärde från PhpMetrics som kan vara intressant att kika närmare på är maintainability-score som finns att hitta tillsammans med kodens komplexitet. Det går att se hur högt betyg ens moduler får med eller utan kommentarer, och just antalet kommentarer verkar ha en stor påverkan på betyget. Tar man en titt i min kodbas märkar man snabbt att jag har varit dålig på att kommentera min kod, vilket gör det svårt för om någon annan skulle arbeta med kodbasen att förstå sig på hur hela systmemet hänger ihop. Det är enkelt att glömma bort att dokumentera ens kod när man är den enda som arbetar med den, och en enkel förbättring hade varit att kommentera ens klasser och dess metoder för att öka betyget för maintainability.</p>
+
+
+
+    <h2>Scrutinizer</h2>
+
+    <p></p>
+
 </main>
 {% endblock %}
