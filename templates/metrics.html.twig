@@ -37,7 +37,32 @@
 
     <h2>Scrutinizer</h2>
 
-    <p></p>
+    <p>Första betyget som scrutinizer gav mig skrämde livet ur mig, enligt rapporten hade min kod uppemot två tusen buggar som är imponerande med tanke på att jag endast skrivit circa 900 rader kod för projektet. Jag fick då intrycket att jag hade ett stort arbete framför mig med att försöka fixa så mycket av det som möjligt. Efter att ha kikat lite närmare på rapporten insåg jag att den även testade koden i "tools"-mappen, som inte är en del av min egna kod. Efter att ha sett till att även exkludera tools-mappen från testerna så fick min kod ett betyg som ser helt klart mycket bättre ut.</p>
+
+    <p>Överlag så verkar inte scrutinizer klaga på särskilt mycket när det kommer till kodbasen, det är mestadels några best practice aspekter samt att det finns några rader kod som aldrig används. Majoriteten av felen kan nog ses som slarvfel och bör gå att åtgärda relativt snabbt. Däremot så syns det tydligt att komplexiteten är hög för en stor del av filerna, precis som rapporten från PhpMetrics pekade ut. En till aspekt som skulle behöva åtgärdas är att test coverage är för lågt på endast 34%.</p>
+
+    <p>Det som förmodligen orsakar den höga komplexiteten är att kortspelet kräver till stor del flera if-satser samt loopar för att fungera, det skulle kunna vara möjligt att försöka använda sig av andra konstruktioner för att försöka minska komplexiteten men frågan är om koden blir nödvändigtvis bättre av det i det stora hela. Problematiken som kan möjligen uppstå är att koden i sig blir mindre tydlig om man går ifrån de mer "vanliga" konstruktionerna så som loopar och if-satser, men det är definitivt värt ett försök om det skulle innebära en tydlig förbättring kring kodens komplexitet. Hur kortspelet orsakar den höga komplexiteten blir tydlig i metoden <em>decideWinner()</em> som är den sämst rankade metoden enligt rapporten. Det krävs i skrivande stund åtta olika conditions för att avgöra om antingen spelaren eller dealer:n har vunnit, och dessa är:</p>
+
+    <ul>
+        <li>Spelaren har inte högre poäng än 21</li>
+        <li>eller spelaren har samma poäng som dealer</li>
+        <li>eller dealer har högre poäng än spelaren och att poängen inte mer än 21</li>
+    </ul>
+
+    <p>För att avgöra om spelaren har vunnit:</p>
+
+    <ul>
+        <li>dealer har mer än 21 poäng och spelaren har 21 eller mindre</li>
+        <li>eller spelaren har högre poäng än dealer</li>
+    </ul>
+
+    <p>Det svåra i det här exemplet är att alla dessa scenarion behövs testas för att avgöra vem som har vunnit, men på grund av det får koden en hög komplexitet. Det är inte omöjligt att det finns en lösning som har en lägre komplexitet, men i slutändan kommer man behöva använda sig utav en if-sats för att se vem som har vunnit.</p>
+
+
+    <h2>Förbättringar</h2>
+
+    <p>De tre övergripande aspekter som behövs göras för att förbättre kodbasen; rätta slarvfel samt följa best practice bättre, öka test coverage av koden, och slutligen försöka sänka komplexiteten av koden. Valet av att följa best practice bättre är för att skapa "snyggare kod" samt för att det kan förbättra maintainability av kodbasen. Att förbättra test coverage gör att jag känner mig tryggare i att koden fortsätter att fungera även om jag ändrar på den. Slutligen att försöka sänka komplexitet gör förhoppningsvis koden snabbare att exekevera samt att även det kan göra det enklare att underhålla kodbasen.</p>
+    
 
 </main>
 {% endblock %}

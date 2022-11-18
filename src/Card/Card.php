@@ -20,26 +20,15 @@ class Card
 
     public function getCardGraphic(): string
     {
-        $color;
-        switch ($this->color) {
-            case 'heart':
-                $color = '♥';
-                break;
-            case 'diamond':
-                $color = '♦';
-                break;
-            case 'clover':
-                $color = '♣';
-                break;
-            case 'joker':
-                $color = '🃏';
-                break;
-            default:
-                $color = '♠';
-                break;
-        }
+        $graphic = array(
+            'heart' => '♥',
+            'diamond' => '♦',
+            'clover' => '♣',
+            'spade' => '♠',
+            'joker' => '🃏'
+        );
 
-        return $color;
+        return $graphic[$this->color];
     }
 
     public function getValue(): int
