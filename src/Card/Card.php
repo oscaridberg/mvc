@@ -38,24 +38,20 @@ class Card
 
     public function getStringValue(): string
     {
-        switch ($this->value) {
-            case 1:
-            case 14:
-                return 'A';
-                break;
-            case 11:
-                return 'J';
-                break;
-            case 12:
-                return 'Q';
-                break;
-            case 13:
-                return 'K';
-                break;
-            default:
-                return strval($this->value);
-                break;
-        }
+        $cardStrings = array(
+            1 => 'A',
+            11 => 'J',
+            12 => 'Q',
+            13 => 'K',
+            14 => 'A'
+        );
+
+        if ($this->value <= 1 or $this->value >= 11) {
+            return $cardStrings[$this->value];
+        };
+
+
+        return strval($this->value);
     }
 
     public function getColor(): string
