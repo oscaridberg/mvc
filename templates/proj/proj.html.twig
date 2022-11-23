@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+{% block title %}About{% endblock %}
+{% block body %}
+
+<main>
+    <h1>Project</h1>
+
+    <h2>Five-Card-Poker</h2>
+
+    <a class="game-button" href="{{ absolute_url(path('proj/about')) }}">About</a>
+    <a class="game-button" href="{{ absolute_url(path('proj/about')) }}">Start Game</a>
+</main>
+{% endblock %}
