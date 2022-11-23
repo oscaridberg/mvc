@@ -65,7 +65,7 @@ class CardTest extends TestCase
         $card = new Card(1, 'joker');
         $this->assertEquals('🃏', $card->getCardGraphic());
 
-        $card = new Card(1, 'test');
+        $card = new Card(1, 'spade');
         $this->assertEquals('♠', $card->getCardGraphic());
     }
 

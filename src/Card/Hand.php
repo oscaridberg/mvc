@@ -22,7 +22,6 @@ class Hand
 
     public function sumCards(): int
     {
-        $value = 0;
         $cardValues = [];
         $aces = [];
 
@@ -34,7 +33,9 @@ class Hand
             }
         }
 
-        for ($i = 0; $i < count($aces); $i++) {
+        $noOfAces = count($aces);
+
+        for ($i = 0; $i < $noOfAces; $i++) {
             if (array_sum($cardValues) + array_sum($aces) < 21) {
                 $aces[$i] = 14;
                 if (array_sum($cardValues) + array_sum($aces) > 21) {
@@ -43,6 +44,8 @@ class Hand
             }
         }
 
-        return array_sum($cardValues) + array_sum($aces);
+        $cardSum = array_sum($cardValues) + array_sum($aces);
+
+        return $cardSum;
     }
 }

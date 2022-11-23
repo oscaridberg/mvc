@@ -65,9 +65,7 @@ class Deck
     {
         $cards = [];
 
-        if ($number > $this->deckLength()) {
-            $card = null;
-        } else {
+        if ($number < $this->deckLength()) {
             for ($i = 0; $i < $number; $i++) {
                 $card = $this->deck[$i];
                 array_push($cards, $card);
