@@ -1,0 +1,63 @@
+{% extends "base.html.twig" %}
+{% block title %}Five-Card-Poker{% endblock %}
+{% block body %}
+
+
+
+<main>
+    <h1>{{ title }}</h1>
+
+    {# <p class="cardCounter">Cards left in deck: {{ length }}</p> #}
+    <div class="deck-field">
+            <div class='player21'>
+            <p>Dealer</p>
+                {% if dealer is defined %}
+                    <p>Dealer score: {{dealer}}</p>
+                {% else %}
+                    <p>Dealer score: </p>
+                {% endif %}
+
+                {% for card in players[0].getHand() %}
+                    <div class="cardHidden"><p></p></div>
+                {% endfor %}
+
+            </div>
+
+            <div class='player21'>
+            <p>Player</p>
+                {% if score is defined %}
+                    <p>Your score: {{score}}</p>
+                {% else %}
+                    <p>Your score: </p>
+                {% endif %}
+
+                {% for card in players[1].getHand() %}
+                    <a class="card {{card.getColor()}}" href="#"><p> {{ card.getCardGraphic() }} {{card.getStringValue()}} </p></a>
+                {% endfor %}
+
+            </div>
+
+    </div>
+    <div class="button-container">
+        {% if isStarted is defined %}
+            <a class="game-button deal" href="#">test</a>
+        {% else %}
+        <a class="game-button deal" href="{{ absolute_url(path('drawpoker')) }}">Deal Cards</a>
+        {% endif %}
+
+        {# {% if score is defined %}
+            <a class="game-button stay" href="{{ absolute_url(path('stay')) }}">Stay</a>
+        {% else %}
+            <a class="game-button stay" href="#">Stay</a>
+        {% endif %} #}
+
+        <a class="game-button quit" href="{{ absolute_url(path('quit')) }}">Quit</a>
+    </div>
+
+</main>
+
+
+
+
+
+{% endblock %}

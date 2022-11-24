@@ -143,6 +143,18 @@ article p {
   display: flex;
   justify-content: center;
   background-color: white;
+  text-decoration: none;
+}
+
+.cardHidden {
+  flex: 2 0 7%;
+  border: 2px solid black;
+  min-height: 100px;
+  height: 100px;
+  max-width: 65px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(173, 0, 0);
 }
 
 .player {
